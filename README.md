@@ -6,9 +6,9 @@ places ships								ships, board
 shoots at ships								board 
 
 ### Do this later
-#wins game
-#loses game
-#takes turns
+wins game
+loses game
+takes turns
 
 ## Class: ships
 
