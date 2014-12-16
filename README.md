@@ -2,8 +2,8 @@ CRC
 
 ## Class: player
 
-places ships								ships, primary grid
-shoots at ships								primary grid (opponent) 
+places ships								ships, board
+shoots at ships								board 
 
 ### Do this later
 #wins game
@@ -12,17 +12,13 @@ shoots at ships								primary grid (opponent)
 
 ## Class: ships
 
-have length									primary grid
+have length									board
 gets hit 									player
 gets sunk
 
-## Class: tracking grid
+## Class: board
 
-marking (player) shots 						primary grid
-
-## Class: primary grid
-
-announcing opponent hits					tracking grid
+announcing opponent hits					board
 store player ship position					ships
 stores location of hits on ships			-
-
+marking (player) shots 						board
