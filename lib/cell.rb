@@ -2,15 +2,15 @@
 class Cell 
 
   attr_reader :name
-  attr_reader :contains
+  attr_reader :contents
 
   def initialize(name)
     @name = name
-    @contains = 'water'
+    @contents = 'water'
   end
 
   def add_ship(ship)
-    @contains = ship
+    @contents = ship
   end
 
 end

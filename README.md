@@ -18,8 +18,8 @@ gets sunk
 
 ## Class: board
 
+store ship position			  				ships
 announcing opponent hits					board
-store player ship position  				ships
 stores location of hits on ships			-
 marking (player) shots 						board
 

@@ -10,12 +10,12 @@ describe Cell do
   end
 
   it 'should contain water' do 
-    expect(cell.contains).to eq 'water'
+    expect(cell.contents).to eq 'water'
   end
 
   it 'should contain ships' do 
     cell.add_ship(ship)
-    expect(cell.contains).to eq ship
+    expect(cell.contents).to eq ship
   end
 
 end

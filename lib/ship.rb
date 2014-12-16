@@ -1,6 +1,6 @@
 class Ship
 
-  attr_accessor :size
+  attr_reader :size
 
   def initialize
     @size = 1
