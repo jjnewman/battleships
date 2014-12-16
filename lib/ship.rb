@@ -4,6 +4,14 @@ class Ship
 
   def initialize
     @size = 1
+    @hit_count = 0
   end
 
+  def hit
+    @hit_count += 1
+  end
+
+  def hit?
+    @hit_count > 0
+  end
 end

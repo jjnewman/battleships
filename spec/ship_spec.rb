@@ -7,4 +7,10 @@ describe Ship do
 	it 'should have length' do
     expect(ship.size).to eq(1) 
 	end
+
+  it 'should get hit' do
+    ship.hit
+    expect(ship).to be_hit
+  end
+
 end
