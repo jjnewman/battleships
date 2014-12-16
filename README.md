@@ -19,6 +19,11 @@ gets sunk
 ## Class: board
 
 announcing opponent hits					board
-store player ship position					ships
+store player ship position  				ships
 stores location of hits on ships			-
 marking (player) shots 						board
+
+## Class: cell 
+
+contains name of cell 						board
+contains water or ship   					ship
