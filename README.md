@@ -6,9 +6,9 @@ places ships								ships, primary grid
 shoots at ships								primary grid (opponent) 
 
 ### Do this later
-#wins game
-#loses game
-#takes turns
+wins game
+loses game
+takes turns
 
 ## Class: ships
 
