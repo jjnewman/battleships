@@ -1,21 +1,22 @@
+require './lib/cell'
+
 class Board
 
   attr_reader :cells
 
   def initialize
-
     @cells = [] 
-
   end
 
+  def generate
+    @cells << 100.times { Cell.new }
+  end
+
+  
+
+  # the cells could have a method of keeping track of their name and position 
+
   def add_ship(ship, cell_position)
-
-    # we have a cell in the board
-    # ship needs to be stored in a cell 
-    # we need to read cells
-    # and place where requested
-    # we need to add that cell to the cells
-
     requested_cell = find_cell(cell_position)
     requested_cell.sample.add_ship(ship)
   end
@@ -25,6 +26,7 @@ class Board
       cell.name == cell_position
     end
   end 
+
 
   
 
