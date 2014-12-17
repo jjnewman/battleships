@@ -45,8 +45,9 @@ class Cell
 
   def hit
     if contains_ship?
-      @contents.hit
-      @hit = true 
+      @hit = true
+    else
+      miss
     end
   end
 

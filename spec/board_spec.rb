@@ -7,6 +7,7 @@ describe Board do
   # let(:cell)  { Cell.new              }
   let(:board) { Board.new             }
 
+
   before(:each) do
     Cell.class_variable_set(:@@count, 0)
   end
@@ -25,9 +26,17 @@ describe Board do
     expect(board.find_cell('a1').contents).to eq(ship)
   end
 
+  it 'can hit a cell' do 
+    ship = Ship.new
+    board.add_ship(ship, "a2")
+    board.hit_cell("a2")
+    expect(board.find_cell("a2")).to be_hit
+  end
 
-  it 'can store location of hits on ships' do 
-    
+  it 'can record a miss' do 
+    ship = Ship.new
+    board.hit_cell("a3")
+    expect(board.find_cell("a3")).to be_miss
   end
 
   # # helper methods

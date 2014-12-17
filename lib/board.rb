@@ -32,10 +32,7 @@ class Board
   def hit_cell(cell_position)
     cell = find_cell(cell_position)
     cell.hit
-    cell.hit?
   end
-
-
 
  
 end

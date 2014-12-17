@@ -17,4 +17,6 @@ describe Ship do
     ship.hit
     expect(ship).to be_sunk
   end
+
+  
 end

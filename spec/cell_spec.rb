@@ -36,6 +36,11 @@ describe Cell do
     expect(cell).to be_hit
   end
 
+  it 'can record misses on ships' do
+    cell.hit
+    expect(cell).to be_miss
+  end
 
+  
 
 end
