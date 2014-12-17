@@ -19,4 +19,5 @@ class Ship
     @hit_count == @size
   end
 
+
 end

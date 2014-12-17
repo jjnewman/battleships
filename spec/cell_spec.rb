@@ -2,8 +2,13 @@ require 'cell'
 
 describe Cell do
 
-  let(:ship) { double = :ship}
-  let(:cell) { Cell.new}
+  let(:ship) { double :ship}
+  let(:cell) { Cell.new }
+  let(:board) { double :board}
+
+  before(:each) do
+    Cell.class_variable_set(:@@count, 0)
+  end
 
   it 'should name itself on initialization' do
     expect(cell.name).to eq 'a1'

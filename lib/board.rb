@@ -6,16 +6,27 @@ class Board
 
   def initialize
     @cells = [] 
+    generate
   end
 
-  def make_cell
-    cell = Cell.new
-  end
+  # def make_cell
+  #   cell = Cell.new
+  # end
 
   def generate
-    make_cell
-    100.times { @cells << make_cell }
+    100.times { cell = Cell.new; @cells << cell }
   end
 
+  def find_cell(cell_position)
+    cell = cells.select do |cell|
+      cell.name == cell_position
+    end
+    return cell.sample
+  end
 
+  def add_ship(ship, cell_position)
+    requested_cell = find_cell(cell_position)
+    requested_cell.add_ship(ship)
+  end
+ 
 end
