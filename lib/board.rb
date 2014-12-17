@@ -9,10 +9,8 @@ class Board
   end
 
   def generate
-    @cells << 100.times { Cell.new }
+    100.times { @cells << Cell.new } 
   end
-
-  
 
   # the cells could have a method of keeping track of their name and position 
 
@@ -26,8 +24,5 @@ class Board
       cell.name == cell_position
     end
   end 
-
-
-  
 
 end

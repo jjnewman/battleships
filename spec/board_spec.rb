@@ -7,6 +7,8 @@ describe Board do
   let(:cell) { Cell.new }
   let(:board) { Board.new }
 
+
+
   it 'can generate a board' do  
     # expect{board.generate}.to change{count_cells(board)}.by 100
   end
