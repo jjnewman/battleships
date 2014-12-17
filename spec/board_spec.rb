@@ -20,9 +20,14 @@ describe Board do
     expect(required_cell.name).to eq('a1')
   end
 
-  it 'can place ship a ship of size 1' do
+  it 'can place a ship' do
     board.add_ship(ship, 'a1')
     expect(board.find_cell('a1').contents).to eq(ship)
+  end
+
+
+  it 'can store location of hits on ships' do 
+    
   end
 
   # # helper methods

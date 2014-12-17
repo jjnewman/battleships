@@ -1,4 +1,6 @@
 # intialises with water so when creating board... create cells first then add ships. 
+require './lib/ship'
+
 class Cell 
 
   # this is a class variable and counts every time a cell is made
@@ -11,6 +13,8 @@ class Cell
     @contents = 'water'
     cell_name
     @@count += 1 
+    @hit = false
+    @miss = false
   end
 
   def cell_name
@@ -33,6 +37,31 @@ class Cell
 
   def add_ship(ship)
     @contents = ship
+  end
+
+  def contains_ship?
+    @contents.instance_of? Ship
+  end
+
+  def hit
+    if contains_ship?
+      @contents.hit
+      @hit = true 
+    end
+  end
+
+  def hit?
+    @hit
+  end
+
+  def miss 
+    if !contains_ship?
+      @miss = true 
+    end
+  end
+
+  def miss? 
+    @miss
   end
 
 end
