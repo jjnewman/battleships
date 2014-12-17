@@ -4,13 +4,14 @@ require 'cell'
 describe Board do  
 
   let(:ship) { double :ship, size: 1 }
-  let(:cell) { Cell.new }
+  let(:cell) { double :cell, name: 'a1' }
   let(:board) { Board.new }
 
 
 
   it 'can generate a board' do  
-    # expect{board.generate}.to change{count_cells(board)}.by 100
+    allow(board).to receive(:make_cell).and_return(cell)
+    expect{board.generate}.to change{count_cells(board)}.by 100
   end
 
   it 'can place ship' do
@@ -21,9 +22,9 @@ describe Board do
 
   # helper methods
 
-  # def count_cells(board)
-  #   board.cells.count
-  # end
+  def count_cells(board)
+    board.cells.count
+  end
 
 
 end

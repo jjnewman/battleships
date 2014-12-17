@@ -8,21 +8,14 @@ class Board
     @cells = [] 
   end
 
+  def make_cell
+    cell = Cell.new
+  end
+
   def generate
-    100.times { @cells << Cell.new } 
+    make_cell
+    100.times { @cells << make_cell }
   end
 
-  # the cells could have a method of keeping track of their name and position 
-
-  def add_ship(ship, cell_position)
-    requested_cell = find_cell(cell_position)
-    requested_cell.sample.add_ship(ship)
-  end
-
-  def find_cell(cell_position)
-    @cells.select do |cell|
-      cell.name == cell_position
-    end
-  end 
 
 end
