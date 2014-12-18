@@ -29,12 +29,17 @@ class Board
     #   raise "That cell contains a ship!"
     # end
     requested_cell = find_cell(cell_position)
-    if requested_cell.contains_ship?
+    if requested_cell.nil?
+      raise "That ship does not fit"
+    elsif requested_cell.contains_ship?
       raise "That cell contains a ship!"
     else
       requested_cell.add_ship(ship)
     end
   end
+
+
+  # we need to ensure that we can't pass a cell_position if the cell position doesn't exist
 
   def add_ship_verticle(ship, cell_position)
     add_ship(ship, cell_position)

@@ -57,6 +57,12 @@ describe Board do
     expect{board.add_ship_verticle(ship, "a9")}.to raise_error(RuntimeError, "That ship does not fit")
   end
 
+  it 'should not place partial ships' do 
+    ship = Ship.new(3)
+    board.add_ship_verticle(ship, "a9")
+    cell = board.find_cell('a9')
+    expect{cell.contents}.to eq('water')
+  end
 
   # # helper methods
 
