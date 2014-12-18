@@ -39,7 +39,7 @@ class Board
   # if length is 5 add to 5 cells below =  add to all (cell_position + (length - 1))
   # whatever that number is add 1, 1, 1, 1, 1 
 
-  def add_big_ship_verticle(ship, cell_position)
+  def add_ship_verticle(ship, cell_position)
     # cell_position.add_ship(ship)
     
     # [1,2,3,4,5]
@@ -54,8 +54,8 @@ class Board
 
     # ship.size.inject { |memo, number| number - 1 }
 
-    cell_letter = cell_position.scan((/[a-z]/).first) 
-    cell_number = cell_position.scan((/\d/).first)
+    # cell_letter = cell_position.scan((/[a-z]/).first) 
+    # cell_number = cell_position.scan((/\d/).first)
   end
 
 

@@ -39,7 +39,11 @@ describe Board do
     expect(board.find_cell("a3")).to be_miss
   end
 
-  it 'it can add a large ship' do 
+  it 'it can add a large ship vertically' do
+    cargo_ship = Ship.new(2)
+    board.add_ship_verticle(cargo_ship,"a1")
+    expect(board.find_cell("a1").contents).to eq(cargo_ship) 
+    expect(board.find_cell("a2").contents).to eq(cargo_ship) 
   end
 
   # # helper methods
