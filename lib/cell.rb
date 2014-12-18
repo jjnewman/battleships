@@ -47,18 +47,12 @@ class Cell
     if contains_ship?
       @hit = true
     else
-      miss
+      @miss = true
     end
   end
 
   def hit?
     @hit
-  end
-
-  def miss 
-    if !contains_ship?
-      @miss = true 
-    end
   end
 
   def miss? 
