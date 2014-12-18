@@ -44,7 +44,9 @@ class Cell
   end
 
   def hit
-    if contains_ship?
+    if hit?
+      raise "Cell already hit"
+    elsif contains_ship?
       @contents.hit
       @hit = true
     else
