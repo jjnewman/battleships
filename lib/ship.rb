@@ -2,7 +2,7 @@ class Ship
 
   attr_reader :size
 
-  def initialize size
+  def initialize(size = 1)
     @size = size
     @hit_count = 0
   end

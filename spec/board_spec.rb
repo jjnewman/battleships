@@ -39,6 +39,9 @@ describe Board do
     expect(board.find_cell("a3")).to be_miss
   end
 
+  it 'it can add a large ship' do 
+  end
+
   # # helper methods
 
   def count_cells(board)
