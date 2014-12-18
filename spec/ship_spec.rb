@@ -14,7 +14,7 @@ describe Ship do
   end
 
   it 'should get sunk when hit count is equal to size' do
-    ship = Ship.battleship
+    ship = Ship.aircraft_carrier
     5.times { ship.hit }
     expect(ship).to be_sunk
   end
@@ -36,17 +36,17 @@ describe Ship do
 
   it 'should be able to create an submarine' do 
     ship = Ship.submarine
-    expect(ship.size) to eq(3)
+    expect(ship.size).to eq(3)
   end
 
   it 'should be able to create a destroyer' do 
     ship = Ship.destroyer
-    expect(ship.size) to eq(3)
+    expect(ship.size).to eq(3)
   end
 
   it 'should be able to create a patrol boat' do 
     ship = Ship.patrol_boat
-    expect(ship.size) to eq(2)
+    expect(ship.size).to eq(2)
   end
 
 

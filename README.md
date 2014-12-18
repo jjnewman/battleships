@@ -4,6 +4,7 @@ CRC
 
 places ships								ships, board
 shoots at ships								board 
+be able to win
 
 ### Do this later
 wins game

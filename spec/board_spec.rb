@@ -64,12 +64,7 @@ describe Board do
     expect(board.find_cell("b1").contents).to eq(cruiser)   
   end
 
-  it 'should find all hits' do 
-    ship = Ship.new
-    board.add_ship(ship, "a1")
-    board.hit_cell("a1")
-    expect(board.find_hits).to 
-  end
+
 
   # # helper methods
 
