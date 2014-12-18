@@ -42,6 +42,17 @@ class Board
     add_ship(ship, cell_position)
   end   
 
+  def add_ship_horizontal(ship, cell_position)
+    cell_letter = cell_position.scan((/[a-z]/)).first 
+    cell_number = cell_position.scan((/\d/)).first
+    new_cell_letter = cell_letter.succ
+    ((ship.size) - 1).times do
+      add_ship(ship, ("#{new_cell_letter}" + "#{cell_number}"))
+      new_cell_letter = new_cell_letter.succ
+    end
+    add_ship(ship, cell_position)
+  end  
+
   def hit_cell(cell_position)
     cell = find_cell(cell_position)
     cell.hit
