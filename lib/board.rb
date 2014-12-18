@@ -9,10 +9,6 @@ class Board
     generate
   end
 
-  # def make_cell
-  #   cell = Cell.new
-  # end
-
   def generate
     100.times { cell = Cell.new; @cells << cell }
   end
@@ -25,9 +21,6 @@ class Board
   end
 
   def add_ship(ship, cell_position)
-    # if cell.contains_ship? == true
-    #   raise "That cell contains a ship!"
-    # end
     requested_cell = find_cell(cell_position)
     if requested_cell.nil?
       raise "That ship does not fit"
@@ -38,11 +31,7 @@ class Board
     end
   end
 
-
-  # we need to ensure that we can't pass a cell_position if the cell position doesn't exist
-
   def add_ship_verticle(ship, cell_position)
-    add_ship(ship, cell_position)
     cell_letter = cell_position.scan((/[a-z]/)).first 
     cell_number = cell_position.scan((/\d/)).first
     new_cell_number = cell_number.succ
@@ -50,6 +39,7 @@ class Board
       add_ship(ship, ("#{cell_letter}" + "#{new_cell_number}"))
       new_cell_number = new_cell_number.succ
     end
+    add_ship(ship, cell_position)
   end   
 
   def hit_cell(cell_position)
