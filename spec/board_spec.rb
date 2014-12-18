@@ -47,8 +47,8 @@ describe Board do
   end
 
   it 'should not add any part of the ship if the cell is occupied' do 
-    board = Ship.new(3)
-    board.add_ship(ship, "a1")
+    ship = Ship.new(3)
+    board.add_ship_verticle(ship, "a1")
     expect{board.add_ship(ship, "a2")}.to raise_error(RuntimeError, "That cell contains a ship!")
   end
 
