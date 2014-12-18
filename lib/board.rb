@@ -31,7 +31,7 @@ class Board
     end
   end
 
-  def add_ship_verticle(ship, cell_position)
+  def add_ship_vertical(ship, cell_position)
     cell_letter = cell_position.scan((/[a-z]/)).first 
     cell_number = cell_position.scan((/\d/)).first
     new_cell_number = cell_number.succ

@@ -41,6 +41,7 @@ describe Cell do
     expect(cell).to be_miss
   end
 
-  
+
+
 
 end

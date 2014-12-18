@@ -41,20 +41,20 @@ describe Board do
 
   it 'can add a large ship vertically' do
     cargo_ship = Ship.new(2)
-    board.add_ship_verticle(cargo_ship,"a1")
+    board.add_ship_vertical(cargo_ship,"a1")
     expect(board.find_cell("a1").contents).to eq(cargo_ship) 
     expect(board.find_cell("a2").contents).to eq(cargo_ship) 
   end
 
   it 'should not add any part of the ship if the cell is occupied' do 
     ship = Ship.new(3)
-    board.add_ship_verticle(ship, "a1")
+    board.add_ship_vertical(ship, "a1")
     expect{board.add_ship(ship, "a2")}.to raise_error(RuntimeError, "That cell contains a ship!")
   end
 
   it 'should not be able to add a ship if there is not room on the board' do
     ship = Ship.new(3)
-    expect{board.add_ship_verticle(ship, "a9")}.to raise_error(RuntimeError, "That ship does not fit")
+    expect{board.add_ship_vertical(ship, "a9")}.to raise_error(RuntimeError, "That ship does not fit")
   end
 
   it 'should be able to add a large ship horizontally' do
@@ -63,6 +63,8 @@ describe Board do
     expect(board.find_cell("a1").contents).to eq(cruiser) 
     expect(board.find_cell("b1").contents).to eq(cruiser)   
   end
+
+
 
   # # helper methods
 

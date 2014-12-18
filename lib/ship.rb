@@ -16,7 +16,7 @@ class Ship
   end
 
   def sunk?
-    @hit_count = @size
+    @hit_count == @size
   end
 
   def self.battleship 
