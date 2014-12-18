@@ -41,6 +41,10 @@ describe Cell do
     expect(cell).to be_miss
   end
 
+  it 'should not be able to be hit more than once' do
+    cell.hit
+    expect(cell.hit).to raise_error(RuntimeError, "Cell already hit")
+  end
 
 
 

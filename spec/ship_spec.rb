@@ -21,8 +21,7 @@ describe Ship do
 
   it "should not exceed it's hit count if sunk" do
     ship = Ship.battleship
-    hit_ship = 6.times { ship.hit } 
-    expect{hit_ship}.to raise_error(RuntimeError, "Ship already sunk!")
+    expect{6.times { ship.hit } }.to raise_error(RuntimeError, "Ship already sunk!")
   end
 
   it 'should be able to create a battleship' do 

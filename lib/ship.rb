@@ -8,7 +8,11 @@ class Ship
   end
 
   def hit
-    @hit_count += 1 
+    if @hit_count == @size
+      raise "Ship already sunk!"
+    else
+      @hit_count += 1
+    end 
   end
 
   def hit? 
