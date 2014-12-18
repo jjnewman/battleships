@@ -25,8 +25,15 @@ class Board
   end
 
   def add_ship(ship, cell_position)
+    # if cell.contains_ship? == true
+    #   raise "That cell contains a ship!"
+    # end
     requested_cell = find_cell(cell_position)
-    requested_cell.add_ship(ship)
+    if requested_cell.contains_ship?
+      raise "That cell contains a ship!"
+    else
+      requested_cell.add_ship(ship)
+    end
   end
 
   def add_ship_verticle(ship, cell_position)

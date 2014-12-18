@@ -52,6 +52,12 @@ describe Board do
     expect{board.add_ship(ship, "a2")}.to raise_error(RuntimeError, "That cell contains a ship!")
   end
 
+  it 'should not be able to add a ship if there is not room on the board' do
+    ship = Ship.new(3)
+    expect{board.add_ship_verticle(ship, "a9")}.to raise_error(RuntimeError, "That ship does not fit")
+  end
+
+
   # # helper methods
 
   def count_cells(board)
