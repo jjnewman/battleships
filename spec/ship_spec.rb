@@ -24,8 +24,30 @@ describe Ship do
     expect{6.times { ship.hit } }.to raise_error(RuntimeError, "Ship already sunk!")
   end
 
+  it 'should be able to create an aircraft carrier' do 
+    ship = Ship.aircraft_carrier
+    expect(ship.size).to eq(5)
+  end
+
   it 'should be able to create a battleship' do 
      ship = Ship.battleship
-     expect(ship.size).to eq(5)
+     expect(ship.size).to eq(4)
   end
+
+  it 'should be able to create an submarine' do 
+    ship = Ship.submarine
+    expect(ship.size) to eq(3)
+  end
+
+  it 'should be able to create a destroyer' do 
+    ship = Ship.destroyer
+    expect(ship.size) to eq(3)
+  end
+
+  it 'should be able to create a patrol boat' do 
+    ship = Ship.patrol_boat
+    expect(ship.size) to eq(2)
+  end
+
+
 end

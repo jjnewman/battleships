@@ -51,7 +51,7 @@ class Board
       new_cell_letter = new_cell_letter.succ
     end
     add_ship(ship, cell_position)
-  end  
+  end
 
   def hit_cell(cell_position)
     cell = find_cell(cell_position)
