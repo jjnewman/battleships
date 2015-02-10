@@ -1,9 +1,10 @@
 class Ship
 
-  attr_reader :hit_count
-
-  def initialize
+  attr_reader :hit_count , :size
+  
+  def initialize(*size)
     @hit_count = 0
+    @size = size.join.to_i
   end
 
   def hit!

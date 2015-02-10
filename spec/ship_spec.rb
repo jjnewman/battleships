@@ -4,7 +4,16 @@ describe Ship do
 
 let(:ship){Ship.new}
 
-	it 'should have no hits when created' do
+	it 'should have a size, set on initialising' do
+    destroyer = Ship.new(3)
+    expect(destroyer.size).to eq 3
+  end 
+
+  it 'should have a default size of one' do
+  	expect(ship.size).to eq 1
+  end
+
+  it 'should have no hits when created' do
 		expect(ship.hit_count).to eq 0
 	end
 
@@ -13,9 +22,8 @@ let(:ship){Ship.new}
 		expect(ship.hit_count).to eq 1
 	end
 
-  it 'should have a size, set on initialising' do
-    new_ship = Ship.new(3)
-    expect(new_ship.size).to eq 3
-  end 
+
+
+
 	
 end
