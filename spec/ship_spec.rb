@@ -31,4 +31,20 @@ let(:destroyer) {Ship.new(3)}
     expect(destroyer).to_not be_floating
   end
 
+  xit 'has a position when created' do
+
+
+  end
+
+  xit 'can be missed' do
+
+
+  end	
+
+  xit 'will not be hit when missed' do
+
+
+  end
+
+
 end
