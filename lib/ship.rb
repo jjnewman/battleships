@@ -4,7 +4,7 @@ class Ship
   
   def initialize(*size)
     @hit_count = 0
-    @size = size.join.to_i
+    size == [] ? @size = 1 : @size = size.join.to_i
   end
 
   def hit!
