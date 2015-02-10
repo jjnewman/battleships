@@ -22,6 +22,10 @@ let(:destroyer) {Ship.new(3)}
 		expect(ship.hit_count).to eq 1
 	end
 
+	it 'should be floating on creation' do 
+		expect(ship).to be_floating
+	end
+
   it 'should know when it is sunk' do
     destroyer.size.times { destroyer.hit! }
     expect(destroyer).to_not be_floating
