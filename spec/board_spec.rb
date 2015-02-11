@@ -4,6 +4,7 @@ describe Board do
 
 let(:board) {Board.new}
 let (:ship)  {double :ship}
+let (:battleship) {double :battleship, size: 4}
 
 	it 'should have 100 cells' do
 		expect(board.cell_count).to eq 100
@@ -42,6 +43,14 @@ let (:ship)  {double :ship}
     board.get_shot_at("a1")
     expect{board.get_shot_at("a1")}.to raise_error "a1 has already been targeted! Please shoot again"
   end
-  
+
+  it "should be able to place a horizontal battleship in a1" do
+    board.places_for_ships("a1", battleship)
+    expect(board.contents_at("a1")).to eq battleship
+    expect(board.contents_at("b1")).to eq battleship
+    expect(board.contents_at("c1")).to eq battleship
+    expect(board.contents_at("d1")).to eq battleship
+
+  end
 
 end
