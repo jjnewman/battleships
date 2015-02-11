@@ -31,6 +31,11 @@ let (:ship)  {double :ship}
     board.get_shot_at("a1")
   end
 
+  it "should not allow multiple shots at same square" do
+    board.get_shot_at("a1")
+    expect{board.get_shot_at("a1")}.to raise_error "a1 has already been targeted! Please shoot again"
+  end
+
   
 
 end
