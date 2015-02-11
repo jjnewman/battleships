@@ -40,16 +40,16 @@ describe Ship do
     expect(aircraft_carrier.size).to eq 5
   end
 
-
-  xit "should be able to sink a ship of length one with one hit" do
+  it "should be able to sink a default ship with one hit" do
     ship = Ship.new
     ship.hit
     expect(ship).to be_sunk
   end
 
-  xit "should be able to sink a ship of length two with two hits" do
-    ship = Ship.new
-    expect(ship).to be_sunk
+  it "should be able to sink a patrol boat with two hits" do
+    patrol_boat = Ship.patrol_boat
+    2.times { patrol_boat.hit }
+    expect(patrol_boat).to be_sunk
   end
 
 
