@@ -22,4 +22,6 @@ end
     expect(board.contents_at("a1")).to eq ship
   end
 
+  
+
 end
