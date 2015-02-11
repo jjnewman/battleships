@@ -6,5 +6,5 @@ BOARD = {}
     BOARD[letter + number.to_s] = :water
   end
 end
-
+  
 end
