@@ -17,4 +17,9 @@ end
 		expect(board.cell_count).to eq 100
 	end
 
+  it 'can place a ship on a1 square' do
+    board.place(ship, "a1")
+    expect(board.contents_at("a1")).to eq ship
+  end
+
 end
