@@ -1,29 +1,43 @@
 class Board
 
-BOARD = {}
-["a","b","c","d","e","f","g","h","i","j"].each do |letter|
-  (1..10).each do |number|
-    BOARD[letter + number.to_s] = :water
+  attr_accessor :board
+
+  def initialize
+    @board = generate_board
   end
-end
+
+  def generate_board
+    board = {}
+    ["a","b","c","d","e","f","g","h","i","j"].each do |letter|
+      (1..10).each do |number|
+        board[letter + number.to_s] = :water
+      end
+    end
+    board
+  end
 
 	def place(ship, square)
-		BOARD[square] = ship
+		board[square] = ship
 	end
 
 	def contents_at(square)
-		BOARD[square]
+		board[square]
 	end
 
   def get_shot_at(square)
+    if contents_at(square) == :water
+      board[square] = :miss
+    else 
+      contents_at(square).hit
+    end
   end  
   
   def cell_count
-    BOARD.count
+    board.count
   end
 
   def all_squares
-    BOARD.keys
+    board.keys
   end 
 
 end

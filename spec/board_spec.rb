@@ -1,13 +1,9 @@
 require 'board'
 
-
 describe Board do
 
 let(:board) {Board.new}
 let (:ship)  {double :ship}
-
-# let (:plane)  { double :plane,  land: nil, take_off: nil } 
-
 
 	it 'should have 100 cells' do
 		expect(board.cell_count).to eq 100
@@ -24,15 +20,16 @@ let (:ship)  {double :ship}
     expect(board.contents_at("a1")).to eq ship
   end
 
-  it "returns 'miss when it hits water" do
+  it "returns miss when it hits water" do
     board.get_shot_at("a1")
     expect(board.contents_at("a1")).to eq :miss
   end
 
   it "returns 'hit' when hit's ship at a1" do
     board.place(ship, "a1")
-    board.get_shot_at("a1")
     expect(ship).to receive(:hit)
+    board.get_shot_at("a1")
+
   end
 
   
