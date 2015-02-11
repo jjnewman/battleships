@@ -9,7 +9,7 @@ class Player
   end
 
   def shoot_at(square)
-    board.get_shot_at("a1")
+    board.get_shot_at(square)
   end
 
 end
