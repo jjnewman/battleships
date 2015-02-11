@@ -29,7 +29,6 @@ let (:ship)  {double :ship}
     board.place(ship, "a1")
     expect(ship).to receive(:hit)
     board.get_shot_at("a1")
-
   end
 
   
