@@ -1,9 +1,11 @@
 class Board
 
   attr_accessor :board
+  attr_reader :made_shots
 
   def initialize
     @board = generate_board
+    @made_shots = []
   end
 
   def generate_board
@@ -25,11 +27,9 @@ class Board
 	end
 
   def get_shot_at(square)
-    if contents_at(square) == :water
-      board[square] = :miss
-    else 
-      contents_at(square).hit
-    end
+    raise "#{square} has already been targeted! Please shoot again" if made_shots.include? square
+    contents_at(square) == :water ? board[square] = :miss : contents_at(square).hit
+    made_shots << square
   end  
   
   def cell_count
