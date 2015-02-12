@@ -64,7 +64,6 @@ let (:aircraft_carrier) {double :aircraft_carrier, size: 5}
 
   it "should not allow a ship to go over the boundary of the board" do
     expect{board.place_horizontal("j1", battleship)}.to raise_error "No room for ship! Please select another square."
-    #expect(board.place_horizontal)
-
+    expect contents_at("j1").to eq :water
   end
 end
