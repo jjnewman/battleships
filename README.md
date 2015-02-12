@@ -1,5 +1,8 @@
 ## Battleships project
 
+This is a joint project between [Joe](https://github.com/jjnewman/battleships) and [Gabe](https://github.com/GabeMaker/battleships) using GitHub pong
+Currently at MVP 2 - able to play one player game in irb.
+
 
 Battleships (or Battleship) is a game where each player has a board upon which they can place a number of ships.
 
@@ -12,4 +15,3 @@ The attacking player notes the hit or miss on their own tracking grid, in order 
 
 
 When all of one player's ships have been sunk the game finishes and the player who has ships remaining is the winner.
-Joe 
