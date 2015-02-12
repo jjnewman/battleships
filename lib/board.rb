@@ -46,6 +46,8 @@ class Board
     index = row.index(square)  
     ship_locations = row.slice(index, ship.size)
 
+    raise "No room for ship! Please select another square." if ship_locations.size != ship.size
+
     ship_locations.each do |location|
         place(ship, location)
     end
@@ -56,6 +58,8 @@ class Board
     row = col_array.select{|row| row.include? square}.flatten
     index = row.index(square)  
     ship_locations = row.slice(index, ship.size)
+
+    raise "No room for ship! Please select another square." if ship_locations.size != ship.size
 
     ship_locations.each do |location|
         place(ship, location)

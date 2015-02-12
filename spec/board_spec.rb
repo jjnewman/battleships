@@ -62,8 +62,24 @@ let (:aircraft_carrier) {double :aircraft_carrier, size: 5}
     expect(board.contents_at("a4")).to eq aircraft_carrier
   end
 
-  it "should not allow a ship to go over the boundary of the board" do
+  it "should not allow a ship to go over the boundary of the board horizontally" do
     expect{board.place_horizontal("j1", battleship)}.to raise_error "No room for ship! Please select another square."
-    expect contents_at("j1").to eq :water
+    expect(board.contents_at("j1")).to eq :water
   end
+
+  it "should not allow a ship to go over the boundary of the board vertically" do
+    expect{board.place_vertical("a9", battleship)}.to raise_error "No room for ship! Please select another square."
+    expect(board.contents_at("a9")).to eq :water
+    expect(board.contents_at("a10")).to eq :water
+  end
+
+  it "should not allow a ship to be placed if it crosses an existing ship" do
+    board.place_horizontal("a2", aircraft_carrier)
+    expect{board.place_vertical("b1", battleship)}.to raise_error "There is a previously placed ship in the way"
+    expect(board.contents_at("b1")).to eq :water
+    expect(board.contents_at("b2")).to eq aircraft_carrier
+    expect(board.contents_at("b3")).to eq :water
+    expect(board.contents_at("b4")).to eq :water
+  end
+
 end
