@@ -10,7 +10,7 @@ class Board
 
   def generate_board
     board = {}
-    ["a","b","c","d","e","f","g","h","i","j"].each do |letter|
+    ("a".."j").each do |letter|
       (1..10).each do |number|
         board[letter + number.to_s] = :water
       end
@@ -41,34 +41,52 @@ class Board
   end 
 
   def place_horizontal(square, ship)
-    row_array = board.keys.each_slice(10).to_a.transpose
-    row = row_array.select{|row| row.include? square}.flatten
-    index = row.index(square)  
-    ship_locations = row.slice(index, ship.size)
-
-    raise "No room for ship! Please select another square." if ship_locations.size != ship.size
-    
-    ship_locations.each {|square| raise "There is a previously placed ship in the way" if contents_at(square) != :water }
-      
-
-    ship_locations.each do |location|
-        place(ship, location)
-    end
+    @slices = board.keys.each_slice(10).to_a.transpose
+    place_ship_array(square, ship)
   end
 
   def place_vertical(square, ship)
-    col_array = board.keys.each_slice(10).to_a
-    row = col_array.select{|row| row.include? square}.flatten
-    index = row.index(square)  
+    @slices = board.keys.each_slice(10).to_a
+    place_ship_array(square, ship)
+  end
+
+  def place_ship_array(square, ship)
+    row = @slices.select{|row| row.include? square}.flatten
+    index = row.index(square)     
     ship_locations = row.slice(index, ship.size)
 
-    raise "No room for ship! Please select another square." if ship_locations.size != ship.size
-
+    raise "No room for ship! Please select another square." if ship_locations.size != ship.size   
     ship_locations.each {|square| raise "There is a previously placed ship in the way" if contents_at(square) != :water }
-
-    ship_locations.each do |location|
-        place(ship, location)
-    end
+      
+    ship_locations.each {|location|place(ship, location)}
   end
+
+
+  # def place_horizontal(square, ship)
+  #   row = row_array_horizontal.select{|row| row.include? square}.flatten
+  #   index = row.index(square)     
+  #   ship_locations = row.slice(index, ship.size)
+
+  #   raise "No room for ship! Please select another square." if ship_locations.size != ship.size   
+  #   ship_locations.each {|square| raise "There is a previously placed ship in the way" if contents_at(square) != :water }
+      
+  #   ship_locations.each do |location|
+  #       place(ship, location)
+  #   end
+  # end
+
+  # def place_vertical(square, ship)
+  #   col_array = board.keys.each_slice(10).to_a
+  #   row = col_array.select{|row| row.include? square}.flatten
+  #   index = row.index(square)  
+  #   ship_locations = row.slice(index, ship.size)
+
+  #   raise "No room for ship! Please select another square." if ship_locations.size != ship.size
+  #   ship_locations.each {|square| raise "There is a previously placed ship in the way" if contents_at(square) != :water }
+
+  #   ship_locations.each do |location|
+  #       place(ship, location)
+  #   end
+  # end
 
 end

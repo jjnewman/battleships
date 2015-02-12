@@ -9,9 +9,6 @@ describe Player do
     player.add_board board
 		expect(board).to receive(:get_shot_at).with("a1")
 		player.shoot_at("a1")
-
-
-
 	end
 
 
