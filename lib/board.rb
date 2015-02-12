@@ -47,6 +47,9 @@ class Board
     ship_locations = row.slice(index, ship.size)
 
     raise "No room for ship! Please select another square." if ship_locations.size != ship.size
+    
+    ship_locations.each {|square| raise "There is a previously placed ship in the way" if contents_at(square) != :water }
+      
 
     ship_locations.each do |location|
         place(ship, location)
@@ -60,6 +63,8 @@ class Board
     ship_locations = row.slice(index, ship.size)
 
     raise "No room for ship! Please select another square." if ship_locations.size != ship.size
+
+    ship_locations.each {|square| raise "There is a previously placed ship in the way" if contents_at(square) != :water }
 
     ship_locations.each do |location|
         place(ship, location)
