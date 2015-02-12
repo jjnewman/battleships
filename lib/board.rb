@@ -41,7 +41,7 @@ class Board
   end 
 
 
-  def places_for_ships(square, ship)
+  def place_horizontal(square, ship)
     row_array = board.keys.each_slice(10).to_a.transpose
     row = row_array.select{|row| row.include? square}.flatten
     index = row.index(square)  
@@ -50,49 +50,5 @@ class Board
     ship_locations.each do |location|
         place(ship, location)
     end
-
-
-    #[square to put ships]
-  end 
-
-
-
-
-
-
-
-
-  def find_array_containing(square)
-    
   end
-
-  def find_index_in_array(square)
-    row = find_array_containing(square)
-    row.index(square)
-  end
-
-  def locations_to_place_ships(square, ship)
-    row = find_array_containing(square)
-    row.slice(find_index_in_array, ship.size)
-  end
-
-
-
-  def place_horizontal(square,ship)
-    locations_to_place_ships(square, ship).each do |x|
-      place(ship, x)
-    end
-  end
-
-
-
-  def column_array
-    board.keys.each_slice(10).to_a
-  end
-
-  def row_array
-      column_array.transpose
-  end
-
-
 end
