@@ -40,7 +40,6 @@ class Board
     board.keys
   end 
 
-
   def place_horizontal(square, ship)
     row_array = board.keys.each_slice(10).to_a.transpose
     row = row_array.select{|row| row.include? square}.flatten
@@ -51,4 +50,16 @@ class Board
         place(ship, location)
     end
   end
+
+  def place_vertical(square, ship)
+    col_array = board.keys.each_slice(10).to_a
+    row = col_array.select{|row| row.include? square}.flatten
+    index = row.index(square)  
+    ship_locations = row.slice(index, ship.size)
+
+    ship_locations.each do |location|
+        place(ship, location)
+    end
+  end
+
 end
