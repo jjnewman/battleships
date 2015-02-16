@@ -46,8 +46,6 @@ describe Game do
     game.end_turn
     expect(game.winner).to eq nil
   end
-
 end
 
-  # board needs: all_ships_sunk?
 
