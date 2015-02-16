@@ -8,7 +8,7 @@ describe Game do
   let(:player2)         {double :player2, opponents_board: midgame_board }
   
   let(:winning_player)  {double :player, opponents_board: all_sunk_board}
-  let(:midgame_player) {double :midgame_player, opponents_board: midgame_board}
+  let(:midgame_player)  {double :midgame_player, opponents_board: midgame_board}
   
   let(:midgame_board)   {double :midgame_board, all_ships_sunk?: false}
   let(:all_sunk_board)  {double :all_sunk_board, all_ships_sunk?: true}
