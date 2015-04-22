@@ -8,7 +8,7 @@ class Board
     @made_shots = []
   end
 
-def generate_board
+	def generate_board
     board = {}
     ("a".."j").each do |letter|
       (1..10).each do |number|
