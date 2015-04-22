@@ -31,7 +31,6 @@ describe Player do
     player1 = Player.new
     player1.add_board board1
     player1.add_opponent board2
-    
     expect(board2).to receive(:get_shot_at).with("a1")
     player1.shoot_at("a1")
   end
